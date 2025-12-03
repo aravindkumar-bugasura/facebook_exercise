@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="temp.css">
+</head>
+<body>
+    <div class="container-fluid nav-container">
+		<div class="row nav-bar">
+			<!-- Left Section -->
+			<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 banner-left">
+				<div class="banner-left-img">
+					<img src="./images/fb_icon_144x144.png" alt="facebook" class="facebook-img" height="10px">
+				</div>
+				<div class="banner-left-input col-lg-12">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search Facebook" class="input hidden-xs hidden-sm search-bar">
+				</div>
+			</div>
+
+			<!-- Middle Section (center icons) -->
+			<div class=" col-sm-4 col-md-4 col-lg-4 banner-middle hidden-xs">
+				<ul class="navbar nav nav-tabs">
+					<li><img src="./images/svgexport-4.svg" alt="home" class="middle-img"></li>
+					<li><img src="./images/svgexport-5.svg" alt="friends" class="middle-img"></li>
+					<li><img src="./images/groups.svg" alt="groups" class="middle-img"></li>
+				</ul>
+			</div>
+
+			<!-- Right Section -->
+			<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 banner-right">
+				<div class="right-content right-find-friends hidden-xs hidden-sm">
+					<span class="find-friend">Find friends</span>
+				</div>
+				<div class="right-content">
+					<img src="./images/menu.svg" alt="" class="user-img">
+				</div>
+				<div class="right-content">
+					<img src="./images/mess.svg" alt="" class="user-img">
+				</div>
+				<div class="right-content">
+					<img src="./images/notification.svg" class="user-img" alt="">
+				</div>
+				<div class="right-content" id="userMenu">
+    				<img src="./images/user.png" alt="user" class="user-img">
+					<!-- DROPDOWN MENU -->
+					<!-- <div class="user-dropdown" id="userDropdown">
+						<a href="profile.php">Edit Profile</a>
+						<a href="logout.php">Logout</a>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid section">
+		<div class="container center">
+			<p class="img-center"></p>
+		</div>
+	</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById("userMenu").addEventListener("click", function () {
+    const dropdown = document.getElementById("userDropdown");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+});
+
+// Hide dropdown when clicking outside
+document.addEventListener("click", function (event) {
+    const menu = document.getElementById("userMenu");
+    const dropdown = document.getElementById("userDropdown");
+
+    if (!menu.contains(event.target)) {
+        dropdown.style.display = "none";
+    }
+});
+    </script>
+</body>
+</html>

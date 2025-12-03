@@ -1,0 +1,262 @@
+<?php
+// Database connection
+$servername = "localhost";
+$username = "root";
+$password = "Root@1234";
+$database = "facebook_db";
+$con = new mysqli($servername, $username, $password, $database);
+if ($con->connect_error) {
+    die("Connection failed: " . $con->connect_error);
+}
+// Main user: stays fixed for Welcome message
+$main_user_id = 1; 
+$sql_main_user = "SELECT * FROM tUser WHERE User_id = $main_user_id";
+$result_main_user = $con->query($sql_main_user);
+$main_user = $result_main_user->fetch_assoc();
+// Wall user: initially same as main user
+$wall_user_id = isset($_GET['user_id']) ? intval($_GET['user_id']) : null;
+// Fetch friends of main user 
+$sql_friend = "SELECT DISTINCT u.User_id, u.Name 
+               FROM tFriends f 
+               JOIN tUser u ON f.friend_id=u.User_id 
+               WHERE f.user_id=$main_user_id";
+$result_friend = $con->query($sql_friend);
+// Fetch initial posts for main user
+if($wall_user_id)
+{
+    $sql_post = "SELECT post, posting_date FROM tWall WHERE user_id=$wall_user_id ORDER BY posting_date DESC";
+}
+else{
+    $sql_post="SELECT post, posting_date FROM tWall
+        WHERE user_id = $main_user_id
+        OR user_id IN (SELECT friend_id FROM tFriends WHERE user_id=$main_user_id)
+        ORDER BY posting_date DESC";
+}
+$result_post = $con->query($sql_post);
+if (isset($_POST['post_submit'])) {
+    $post = trim($_POST['new_post']); 
+    $user_id = $main_user_id; 
+
+    if (!empty($post)) {
+        $sql_insert = "INSERT INTO tWall (user_id, post, posting_date) VALUES ($user_id, '$post', NOW())";
+
+        if ($con->query($sql_insert)) {
+            header("Location:facebook_exer.php"); 
+            exit();
+        }
+    }
+}
+
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Facebook</title>
+	<link rel="icon" type="image/png" href="./images/fb_icon_144x144.png">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	<!-- <link rel="stylesheet" href="facebook_exer.css"> -->
+	<link rel="stylesheet" href="/temp.css">
+
+
+</head>
+
+<body>
+	<!--*******************************-->
+	<div class="container-fluid nav-container">
+		<div class="row nav-bar">
+			<!-- Left Section -->
+			<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 banner-left">
+				<div class="banner-left-img">
+					<img src="./images/fb_icon_144x144.png" alt="facebook" class="facebook-img" height="10px">
+				</div>
+				<div class="banner-left-input col-lg-12">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search Facebook" class="input hidden-xs hidden-sm search-bar">
+				</div>
+			</div>
+
+			<!-- Middle Section (center icons) -->
+			<div class=" col-sm-4 col-md-4 col-lg-4 banner-middle hidden-xs">
+				<ul class="navbar nav nav-tabs">
+					<li><img src="./images/svgexport-4.svg" alt="home" class="middle-img"></li>
+					<li><img src="./images/svgexport-5.svg" alt="friends" class="middle-img"></li>
+					<li><img src="./images/groups.svg" alt="groups" class="middle-img"></li>
+				</ul>
+			</div>
+
+			<!-- Right Section -->
+			<div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 banner-right">
+				<div class="right-content right-find-friends hidden-xs hidden-sm">
+					<span class="find-friend">Find friends</span>
+				</div>
+				<div class="right-content">
+					<img src="./images/menu.svg" alt="" class="user-img">
+				</div>
+				<div class="right-content">
+					<img src="./images/mess.svg" alt="" class="user-img">
+				</div>
+				<div class="right-content">
+					<img src="./images/notification.svg" class="user-img" alt="">
+				</div>
+				<div class="right-content" id="userMenu">
+    				<img src="./images/user.png" alt="user" class="user-img">
+					<!-- DROPDOWN MENU -->
+					<!-- <div class="user-dropdown" id="userDropdown">
+						<a href="profile.php">Edit Profile</a>
+						<a href="logout.php">Logout</a>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--*******************************-->
+
+	<!--Banner-->
+	<div class="container-fluid section">
+		<div class="row center-content-top">
+			<div class="col-lg-12 text-center center-content-banner">
+				<div class="center-content-img mt-60">
+					<img src="./images/Screenshot from 2025-11-27 22-10-20.png" alt="">
+				</div>
+			</div>
+		</div>
+		<div class="container center-content-middle">
+			<div class="left row">
+				<img src="./images/549396203_10116914317863211_2996843027695932475_n.jpg" alt="">
+				<div class="user-details">
+					<h1>Mark Zuckerberg <strong><img src="./images/Verified account.svg" alt=""></strong></h1>
+					<a href="#" class="followers-count"><strong>100M</strong> followers</a><br>
+					<!-- <a href="#" id="followers_img"><img src="./images/Screenshot from 2025-11-27 23-25-13.png" alt=""></a> -->
+				</div>
+			</div>
+
+			<div class="right">
+				<p class="center-right-content dark" id="right_follow_icon">
+					<img src="./images/LJ8KuNpi23A.png" alt=""><span>Follow</span>
+				</p>
+
+				<p class="center-right-content" id="right_search_icon">
+					<img src="./images/svgexport-3.svg" alt=""> Search
+				</p>
+
+				<p class="center-right-content">
+					<img src="./images/svgexport-11.svg" alt="">
+				</p>
+			</div>
+		</div>
+
+		<div class="container last">
+			<div class="container-fluid last-content">
+				<ul class="last-content-menu">
+					<li class="active">Posts</li>
+					<li>About</li>
+					<li>Channel</li>
+					<li class="hidden-xs">Reels</li>
+					<li class="hidden-xs">Photos</li>
+					<li class="hidden-xs">Events</li>
+					<li>More <img src="./images/svgexport-22.svg" alt=""></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid profile-body mt-20">
+	<div class="row">
+		<!-- LEFT SIDEBAR: Friends -->
+		<div class="col-xs-12 col-sm-4 col-md-3 left-sidebar">
+			<div class="friends-box">
+				<h4>Friends</h4>
+				<ul class="friends-list">
+				<?php
+				if ($result_friend->num_rows > 0) {
+					while($friend = $result_friend->fetch_assoc()) {
+						echo '<li>';
+						echo '<a href="facebook_exer.php?user_id=' . $friend['User_id'] . '">'
+							. htmlspecialchars($friend['Name']) . '</a>';
+						echo '</li>';
+					}
+				} else {
+					echo '<li>No friends yet.</li>';
+				}
+				?>
+				</ul>
+			</div>
+		</div>
+
+    <!-- MAIN CONTENT: Posts / Wall -->
+    <div class="col-xs-12 col-sm-8 col-md-9 main-content">
+      <!-- Posts Feed -->
+      	<div class="posts">
+			<?php
+			if ($result_post->num_rows > 0) {
+				while($post = $result_post->fetch_assoc()) {
+					echo '<div class="post">';
+					// echo '<div class="post-header">';
+					// echo '<div><strong>' . htmlspecialchars($post['User_Name'] ?? 'User') . '</strong><br>';
+					echo '<div><small>' . $post['posting_date'] . '</small></div>';
+					// echo '</div>';
+					echo '<p class="post-text">' . htmlspecialchars($post['post']) . '</p>';
+					echo '</div>';
+				}
+			} else {
+				echo '<p>No posts yet.</p>';
+			}
+			?>
+      	</div>
+
+	  	<!-- Create Post Form -->
+		<div class="create-post">
+			<form method="POST">
+			<textarea name="new_post" class="post-textarea" placeholder="Write something..." required></textarea>
+			<button type="submit" name="post_submit" class="btn btn-primary post-btn">Post</button>
+			</form>
+		</div>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+document.getElementById("userMenu").addEventListener("click", function () {
+    const dropdown = document.getElementById("userDropdown");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+});
+
+// Hide dropdown when clicking outside
+document.addEventListener("click", function (event) {
+    const menu = document.getElementById("userMenu");
+    const dropdown = document.getElementById("userDropdown");
+
+    if (!menu.contains(event.target)) {
+        dropdown.style.display = "none";
+    }
+});
+
+const friendLinks = document.querySelectorAll('.friend-link');
+friendLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault(); // prevent full reload
+        const userId = this.dataset.userid;
+        fetch('fetch_posts.php?user_id=' + userId)
+            .then(res => res.text())
+            .then(html => {
+                document.querySelector('.posts').innerHTML = html;
+            });
+    });
+});
+
+</script>
+</body>
+
+</html>
