@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box; 
 }
+body{
+    overflow-x: hidden !important;
+}
 .nav-container{
     
     background-color:#FFFFFF;
@@ -780,4 +783,20 @@
 .reaction-bar {
     font-size: 14px;
     color: #555;
+}
+
+.create-post{
+    margin-bottom: 8px;
+}
+
+.buttom-post{
+    padding: 7px;
+    width: 75px;
+}
+
+.post-heading{
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    padding: 9px;
+    font-weight: 700;
 }

@@ -194,53 +194,59 @@ if (isset($_POST['post_submit'])) {
             </div>
 
             <!-- RIGHT SIDE: Posts -->
-            <div class="col-lg-8" id="postsContainer">
-                <h4>Posts</h4>
-                <?php
-                if ($result_post->num_rows > 0) {
-                    while($post = $result_post->fetch_assoc()) {
-                        // Get user info for the post
-                        $user_id_post = $post['user_id'];
-                        $sql_user_post = "SELECT Name, photo_path FROM tUser WHERE User_id = $user_id_post";
-                        $res_user_post = $con->query($sql_user_post);
-                        $user_post = $res_user_post->fetch_assoc();
-                        $profile_photo = !empty($user_post['photo_path']) ? $user_post['photo_path'] : 'images/default-user.png';
-                        $user_name = htmlspecialchars($user_post['Name']);
-                        ?>
-                        <div class="post">
-                            <div class="post-header">
-                                <div class="post-user">
-                                    <img src="<?php echo $profile_photo; ?>" alt="profile" class="post-user-img">
-                                    <div class="user-info">
-                                        <strong><?php echo $user_name; ?></strong><br>
-                                        <small><?php echo $post['posting_date']; ?></small>
-                                    </div>
-                                </div>
-                                <div class="post-more">
-                                    <img src="./images/more.svg" alt="more" class="post-more-img">
-                                </div>
-                            </div>
-                            <div class="post-content">
-                                <?php echo htmlspecialchars($post['post']); ?>
-                            </div>
-                            <div class="reaction-bar">
-                                ❤️👍 125K · 47.8K comments · 13K shares
+            <div class="col-lg-8">
+                <h4 class="post-heading">Posts</h4>
+                <!-- CREATE POST ALWAYS VISIBLE -->
+                <div class="create-post">
+                <textarea id="newPostText" class="post-textarea" placeholder="Write something..."></textarea><br>
+                <button id="postBtn" class="buttom-post">Post</button>
+            </div>
+
+    <!-- POSTS WILL BE LOADED HERE -->
+    <div id="postsContainer">
+        <?php
+        if ($result_post->num_rows > 0) {
+            while($post = $result_post->fetch_assoc()) {
+                $user_id_post = $post['user_id'];
+                $sql_user_post = "SELECT Name, photo_path FROM tUser WHERE User_id = $user_id_post";
+                $res_user_post = $con->query($sql_user_post);
+                $user_post = $res_user_post->fetch_assoc();
+                $profile_photo = !empty($user_post['photo_path']) ? $user_post['photo_path'] : 'images/default-user.png';
+                $user_name = htmlspecialchars($user_post['Name']);
+                ?>
+                <div class="post">
+                    <div class="post-header">
+                        <div class="post-user">
+                            <img src="<?php echo $profile_photo; ?>" class="post-user-img">
+                            <div class="user-info">
+                                <strong><?php echo $user_name; ?></strong><br>
+                                <small><?php echo $post['posting_date']; ?></small>
                             </div>
                         </div>
-                    <?php
-                    }
-                } else {
-                    echo "<p>No posts yet.</p>";
-                }
-                ?>
+                        <div class="post-more">
+                            <img src="./images/more.svg" class="post-more-img">
+                        </div>
+                    </div>
 
-                <div class="create-post">
-                    <form method="POST">
-                        <textarea name="new_post" class="post-textarea" placeholder="Write something..." required></textarea><br>
-                        <button type="submit" name="post_submit">Post</button>
-                    </form>
+                    <div class="post-content">
+                        <?php echo htmlspecialchars($post['post']); ?>
+                    </div>
+
+                    <div class="reaction-bar">
+                        ❤️👍 125K · 47.8K comments · 13K shares
+                    </div>
+
                 </div>
-            </div>
+            <?php
+            }
+        } else {
+            echo "<p>No posts yet.</p>";
+        }
+        ?>
+    </div>
+
+</div>
+
 
         </div>
     </div>
@@ -260,6 +266,49 @@ document.querySelectorAll('.photos img').forEach(photo => {
         xhr.send();
     });
 });
+
+document.getElementById("postBtn").addEventListener("click", function () {
+
+    let postText = document.getElementById("newPostText").value.trim();
+
+    if(postText === ""){
+        alert("Please enter something!");
+        return;
+    }
+
+    let formData = new FormData();
+    formData.append("new_post", postText);
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "add_post_ajax.php", true);
+
+    xhr.onload = function () {
+        if (this.responseText.trim() === "success") {
+
+            // Clear textarea
+            document.getElementById("newPostText").value = "";
+
+            // Refresh posts section
+            loadPosts();
+        } else {
+            alert("Error posting!");
+        }
+    };
+
+    xhr.send(formData);
+});
+
+// Load latest posts without reload
+function loadPosts() {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "fetch_posts_ajax.php", true);
+
+    xhr.onload = function () {
+        document.getElementById("postsContainer").innerHTML = this.responseText;
+    };
+
+    xhr.send();
+}
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
