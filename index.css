@@ -1,0 +1,2014 @@
+/* ==============================
+   Reset and Basic Styles
+============================== */
+
+/* Reset all margins and paddings, set box-sizing to border-box */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Prevent horizontal scroll */
+body {
+	overflow-x: hidden !important;
+}
+
+/* ==============================
+   Navbar Styles
+============================== */
+
+/* Navbar container styling */
+.nav-container {
+	background-color: #FFFFFF;
+	width: 100%;
+	height: 56px;
+	position: fixed;
+	z-index: 1000;
+}
+
+/* Left section of banner with logo and search */
+.banner-left {
+	margin-top: 10px;
+	display: flex;
+	gap: 7px;
+}
+
+/* Search icons size */
+.search-icons {
+	width: 17px !important;
+	height: 17px !important;
+	filter: brightness(0);
+	margin-right: 6px;
+}
+
+/* Search button text */
+.search-button {
+	font-size: 15px;
+	padding: 0px;
+	font-weight: 900;
+	color: #080809;
+}
+
+/* Icon inside search input */
+.banner-left-input>.search-icon {
+	font-size: 15px;
+	opacity: 0.8;
+	padding-right: 5px;
+}
+
+/* Placeholder text styling */
+.search-input::placeholder {
+	font-size: 15px;
+}
+
+/* Logo image */
+.banner-left-img>img {
+	height: 40px;
+	width: 40px;
+	margin-top: -2px;
+	margin-left: 1px;
+}
+
+/* Search input container */
+.banner-left-input {
+	margin-top: -2px;
+	background-color: #F0F2F5;
+	border-radius: 60px;
+	width: 282px;
+	height: 41px;
+	border: 1px solid #ffff;
+	border-top: none;
+}
+
+/* Search box container */
+.search-box {
+	margin-top: 10px;
+}
+
+/* Friend search icon inside search box */
+.search-box .friend-search-icon {
+	display: inline;
+}
+
+/* Image inside search box */
+.search-box img {
+	margin-left: -3px;
+	margin-top: -3px;
+}
+
+/* Search input field */
+.search-bar {
+	margin-top: 0px;
+	margin-left: 4px;
+	background-color: #F0F2F5;
+	border-radius: 40px;
+	border: none;
+	outline: none;
+}
+
+/* Middle banner section */
+.banner-middle {
+	height: 50px;
+}
+
+/* Middle banner menu list */
+.banner-middle>ul {
+	display: flex;
+	justify-content: center;
+	gap: 8px;
+	margin-top: 2px;
+}
+
+/* Right section of banner */
+.banner-right {
+	display: flex;
+	padding: 9px;
+	justify-content: end;
+}
+
+/* Right content circle */
+.right-content {
+	border-radius: 50%;
+}
+
+/* Find Friends button styling */
+.right-find-friends {
+	margin-top: 1px;
+	height: 36px;
+	width: 110px;
+	border-radius: 0px;
+	background-color: #e2e5e9;
+	padding: 9px 13px;
+	border-radius: 20px;
+	margin-right: 0px;
+}
+
+/* Middle banner menu items */
+.banner-middle li {
+	width: 130px;
+	height: 50px;
+	display: flex;
+	gap: 8px;
+	justify-content: center;
+	align-items: center;
+}
+
+.banner-middle li:hover {
+	background-color: #F2F2F2;
+	border-radius: 10px;
+}
+
+/* ==============================
+   Section & Layout Styles
+============================== */
+
+/* Section container */
+.section {
+	padding: 0px;
+	margin: 0px;
+	height: 4963px;
+	width: 1823px;
+}
+
+/* Find friend text styling */
+.find-friend {
+	font-size: 15px;
+	display: inline-block;
+	color: #080809;
+	width: 86px;
+	font-family: inherit;
+	margin: -1px;
+	font-weight: 600;
+}
+
+/* Top right icon container */
+.top-right-icon {
+	background-color: #e2e5e9;
+	padding: 9px;
+}
+
+/* User menu container */
+#user_menu {
+	margin-left: 7px;
+	display: flex;
+	align-items: center;
+}
+
+/* Header right icons container */
+.header-right {
+	display: flex;
+	gap: 8px;
+}
+
+/* Menu icon */
+#menu {
+	height: 40px;
+	width: 40px;
+	margin-top: -1px;
+	padding-left: 10px;
+}
+
+/* Notification icon container */
+#notifications {
+	height: 40px;
+	width: 40px;
+	margin-top: -1px;
+	margin-right: 2px;
+}
+
+#notifications img {
+	padding-left: 1px;
+}
+
+/* Message icon container */
+#message {
+	height: 40px;
+	width: 40px;
+	margin-top: -1px;
+	margin-right: 0px;
+}
+
+/* Message icon image */
+#message img {
+	padding-left: 1px;
+}
+
+/* Verified tick */
+.tick-span .tick-img {
+	margin-top: 2px;
+}
+
+/*tick image*/
+.tick-img{
+	width: 16px;
+	height: 16px;
+}
+
+/*post tick*/
+.post-tick-img{
+	width: 11px;
+	height: 11px;
+}
+/* User icon container */
+.user-icon {
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-right: 5px;
+	position: relative;
+}
+
+/* Dropdown icon inside user icon */
+.user-icon img[alt="drop_down"] {
+	position: absolute;
+	bottom: -2px;
+	right: -2px;
+	width: 14px;
+	height: 14px;
+	background: #FFFFFF;
+	border-radius: 50%;
+	padding: 2px;
+	box-shadow: 0 0 0 0px #ccc;
+	cursor: pointer;
+}
+
+/* ==============================
+   Dropdown & Modal Styles
+============================== */
+
+/* Dropdown container */
+.fb-dropdown {
+	width: 320px;
+	padding: 12px;
+	border-radius: 14px;
+	box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* Profile box */
+.fb-profile-box {
+	padding: 10px;
+	border-radius: 12px;
+	margin-bottom: 10px;
+}
+
+.fb-profile-row {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+/* Avatar styles */
+.fb-avatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: #e4e6eb;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+}
+
+.fb-avatar-img {
+	height: 40px;
+	border-radius: 22px;
+}
+
+.fb-name {
+	font-weight: 700;
+	font-size: 19px;
+	color: #080809;
+}
+
+/* See all profiles */
+.fb-all-profiles {
+	background: #e4e6eb;
+	padding: 10px;
+	border-radius: 10px;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	cursor: pointer;
+}
+
+/* Divider */
+.fb-divider {
+	height: 1px;
+	background: #ddd;
+	margin: 12px 0;
+}
+
+/* Menu item */
+.fb-item {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 10px;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 15px;
+}
+
+/* Hover effect for menu item */
+.fb-item:hover {
+	background: #f0f2f5;
+}
+
+/* Icon inside menu item */
+.fb-item i {
+	background: #e4e6eb;
+	padding: 10px;
+	border-radius: 50%;
+}
+
+/* Right arrow icon */
+.right-arrow {
+	margin-left: auto;
+	background: none !important;
+	padding: 0 !important;
+	color: #65676b;
+}
+
+/* Small text inside menu item */
+.fb-item small {
+	margin-left: auto;
+	color: #65676b;
+	font-size: 12px;
+}
+
+/* Footer */
+.fb-footer {
+	font-size: 12px;
+	color: #65676b;
+	margin-top: 10px;
+}
+
+/* ==============================
+   Edit Modal
+============================== */
+
+/* Overlay */
+.edit-modal {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.45);
+	display: none;
+	align-items: center;
+	justify-content: center;
+	z-index: 9999;
+}
+
+/* Form box */
+.edit-form {
+	background: #fff;
+	width: 380px;
+	padding: 20px;
+	border-radius: 12px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Title */
+.edit-title {
+	text-align: center;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+
+/* Labels */
+.edit-label {
+	font-size: 13px;
+	font-weight: 600;
+	margin-top: 8px;
+	display: block;
+}
+
+/* Inputs */
+.edit-input {
+	width: 100%;
+	padding: 8px 10px;
+	border-radius: 6px;
+	border: 1px solid #ccd0d5;
+	margin-bottom: 8px;
+	outline: none;
+}
+
+.edit-input:focus {
+	border-color: #1877f2;
+}
+
+/* Close button */
+.close-btn {
+	display: block;
+	width: 100%;
+	margin-top: 10px;
+	padding: 10px;
+	background-color: #ccc;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+/* Close button hover effect */
+.close-btn:hover {
+	background-color: #999;
+	color: white;
+}
+
+/* Save button */
+.save-btn {
+	width: 100%;
+	padding: 10px;
+	background: #1877f2;
+	color: #fff;
+	border: none;
+	border-radius: 6px;
+	font-weight: 600;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+.save-btn:hover {
+	background: #166fe5;
+}
+
+/* User profile image styling */
+#user_img_mark {
+	height: 40px;
+	width: 40px;
+	border-radius: 30px;
+}
+
+/* ==============================
+   Background & Center Section
+============================== */
+
+/* Background image for center section */
+.bg-image {
+	width: 100%;
+	max-width: 1250px;
+	height: 519px;
+	background-image: url(./images/main.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center 21%;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+/* Center gradient overlay */
+.center {
+	background: linear-gradient(180deg,
+			#58534E 13%,
+			#8f8f8b 28%,
+			#c9c9c7 55%,
+			#eeeeee 78%,
+			#ffffff 100%);
+}
+
+/* Image inside center section */
+.center-img>img {
+	height: 467px;
+	width: 1251px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	margin-top: 55px;
+}
+
+/* ==============================
+   Profile, Post & Card Styles
+============================== */
+
+/* Photos section container omitted for brevity */
+
+/* Profile detail links */
+.profile-details>p>a {
+	color: #65686c;
+	font-weight: 600;
+}
+
+/* Follow icon styling */
+.follow-icon {
+	width: 16px;
+	height: 16px;
+	filter: brightness(0) invert(1);
+	margin-right: 6px;
+}
+
+.follow-button {
+	font-size: 15px;
+}
+
+/* Facebook menu row */
+.fb-menu-row {
+	display: flex;
+	flex-direction: row;
+	gap: 8px;
+	height: 60px;
+}
+
+/* Menu link styling */
+.menu-link {
+	color: #65676b;
+	font-weight: 600;
+	padding: 16px 12px;
+	cursor: pointer;
+	font-size: 15px;
+	margin-top: 3px;
+}
+
+/* Menu link hover effect */
+.menu-link:hover {
+	background: #f0f2f5;
+	border-radius: 4px;
+	height: 52px;
+	width: auto;
+	text-decoration: none;
+	color: #65676b;
+	margin-top: 3px;
+}
+
+/* Active menu link styling */
+.menu-link.active {
+	margin-bottom: 1px;
+	color: #1877f2;
+	border-bottom: 3px solid #1877f2;
+	background-color: #fff;
+}
+
+/* Full container for sections */
+.full-container {
+	margin-top: 1px;
+	margin-left: 0px;
+	border-bottom: 1px solid #ddd;
+}
+
+/* Middle header section */
+.middle-heeder {
+	margin-top: 15px;
+}
+
+.middle-nav-div {
+	margin-left: -20px;
+	width: 104%;
+	border-top: 1px solid #CED1D5;
+}
+
+/* Page background */
+.last-div {
+	background-color: #F2F4F7;
+}
+
+/* Main page container */
+.post-midle-container {
+	background: #f0f2f5;
+	padding-top: 14px;
+	padding-bottom: 40px;
+	width: 67.7%;
+}
+
+/*Date*/
+.date-format {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #65686C;
+	font-weight: 600;
+}
+
+/* Facebook card style */
+.fb-card {
+	background: #ffffff;
+	border-radius: 8px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	border: none;
+}
+
+/* Apply card style to all cards inside pcontainer */
+.post-midle-container .card {
+	border-radius: 13px !important;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15) !important;
+	width: 102.9%;
+}
+
+/* Card body spacing */
+.fb-card-body {
+	padding: 14px;
+}
+
+/* Intro text title */
+.intro-title {
+	font-size: 20px;
+	font-weight: 600;
+	color: #080809;
+	margin-left: 2px;
+}
+
+/* Post bio text */
+.post-bio {
+	margin-left: 30px;
+	color: #65686c;
+	font-size: 13px;
+}
+
+/* Intro text paragraph */
+.intro-text {
+	font-size: 15px;
+	color: #1c1e21;
+	margin-bottom: 15px;
+}
+
+/* Intro list items */
+.intro-list li {
+	font-size: 15px;
+	margin-bottom: 8px;
+	color: #1c1e21;
+	padding: 6px;
+}
+
+/* Intro list icons */
+.intro-list i {
+	color: #65676b;
+	margin-right: 8px;
+}
+
+/* Photos inside pcontainer */
+.post-midle-container .pimg {
+	display: flex;
+	border-radius: 0px;
+	object-fit: cover;
+	height: 60px;
+	width: 60px;
+}
+
+/* Photo grid gap fix */
+.photogrid-gap {
+	gap: 6px !important;
+}
+
+/* Post header */
+.post-header {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+/* Post header name */
+.post-header-name {
+	font-size: 15px;
+	font-weight: 600;
+	color: #050505;
+}
+
+/* Post header timestamp */
+.post-header-time {
+	font-size: 12px;
+	color: #65676b;
+}
+
+/* Post text */
+.post-text {
+	font-size: 15px;
+	color: #1c1e21;
+	margin-bottom: 12px;
+}
+
+/* Post images styling */
+.post-image {
+	border-radius: 8px;
+	width: 100%;
+	height: auto;
+}
+
+/* Reaction row styling for posts */
+.reaction-bar {
+	border-top: 1px solid #ddd;
+	padding: 8px 14px;
+	font-size: 13px;
+	color: #65676b;
+}
+
+/* Facebook link color styling */
+.fb-link {
+	color: #1877f2 !important;
+	font-size: 13px;
+}
+
+/* Post body container */
+.post-body {
+	width: 104%;
+	height: 50px;
+	background-color: #FFFFFF;
+	margin-bottom: 10px;
+	border-radius: 8px;
+	display: flex;
+}
+
+/* Span inside post body */
+.post-body>span {
+	padding-top: 10px;
+	font-size: 16px;
+	font-weight: 700;
+	padding-left: 10px;
+}
+
+/* ==============================
+   Header Styling
+============================== */
+
+/* Header styling */
+.header {
+	background: #4267B2;
+	padding: 15px 20px;
+	color: #fff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000;
+}
+
+/* Header title */
+.header h2 {
+	margin: 0;
+	font-size: 25px;
+	text-align: center;
+}
+
+/* Header links */
+.header a {
+	color: turquoise;
+	text-decoration: none;
+}
+
+/* Header link hover effect */
+.header a:hover {
+	text-decoration: none;
+	color: rgba(10, 8, 11, 0.49);
+}
+
+/* Main layout container */
+.mcontainer {
+	display: flex;
+	margin: 10px;
+	margin: 9px;
+	margin-top: 12px;
+	gap: 17px;
+}
+
+/* New post heading */
+.newpost>h4 {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/* New post container */
+.newpost {
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 20px;
+}
+
+/* Friends sidebar container */
+.friends {
+	width: 250px;
+	background: #fff;
+	border-radius: 10px;
+	padding: 25px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0.1, 0.1);
+	height: 380px;
+	overflow-y: auto;
+}
+
+/* Friends sidebar heading */
+.friends h3 {
+	margin-top: 0;
+	font-size: 18px;
+	border-bottom: 2px solid #eee;
+	padding-bottom: 10px;
+}
+
+/* Friend links styling */
+.friend-link {
+	display: block;
+	padding: 10px;
+	margin: 8px 0;
+	background: #b9deeece;
+	border-radius: 8px;
+	cursor: pointer;
+	color: #0f0e0e;
+	font-size: 18px;
+	transition: all 0.2s;
+}
+
+/* Friend link hover effect */
+.friend-link:hover {
+	background: #e0ddddf8;
+}
+
+/* Active friend link (when clicked) */
+.friend-link:active {
+	background: #4267B2;
+	color: #fff;
+}
+
+/* Wall section styling */
+.wall {
+	width: 75%;
+	background: #fff;
+	border-radius: 7px;
+	padding: 25px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Wall heading */
+.wall h3 {
+	margin-top: 0;
+	font-size: 20px;
+	border-bottom: 2px solid #eee;
+	padding-bottom: 15px;
+}
+
+/* Individual post card */
+.post {
+	background: #ffffff;
+	padding: 12px;
+	border-radius: 8px;
+	margin-bottom: 15px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Strong text inside posts */
+.post strong {
+	color: #080809;
+	font-size: 15px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Change placeholder font and color */
+.post-textarea::placeholder {
+	font-family: 'Arial', sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	color: #666;
+	font-style: italic;
+}
+
+/* Form container */
+.form {
+	max-width: 400px;
+	margin: auto;
+}
+
+/* Input and textarea styling */
+.input,
+.textarea {
+	width: 130%;
+	margin: 5px 0;
+	padding: 8px;
+}
+
+/* Message text styling */
+.msg {
+	color: tomato;
+}
+
+/* Post textarea styling */
+.post-textarea {
+	margin-bottom: 0;
+	width: 100%;
+	height: 60px;
+	border: none;
+	margin-bottom: 10px;
+	background-color: #fff;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+/* Dropdown container */
+.dropdown {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+}
+
+/* Dropdown menu hidden by default */
+.dropdown-menu {
+	left: -276px;
+	display: none;
+	position: absolute;
+	right: 0px;
+	top: 43px;
+	background-color: #fff;
+	min-width: 120px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	border-radius: 6px;
+	z-index: 1000;
+	overflow: hidden;
+}
+
+/* Dropdown links */
+.dropdown-menu a {
+	display: block;
+	display: flex;
+	justify-content: center;
+	padding: 10px 15px;
+	text-decoration: none;
+	color: #2f3640;
+	font-weight: 500;
+	transition: background-color 0.3s;
+}
+
+/* Dropdown link hover effect */
+.dropdown-menu a:hover {
+	background-color: #f1f2f6;
+}
+
+/* Profile row container */
+.profile-row {
+	padding: 10px 0;
+}
+
+/* Profile content container */
+.pro-procontent {
+	display: flex;
+}
+
+/* Full profile container */
+.full-new-profile {
+	display: flex;
+	align-items: end;
+	justify-content: space-between;
+}
+
+/* Profile image container */
+.profile-image {
+	margin-top: -30px;
+	margin-left: -23px;
+}
+
+/* Profile image styling */
+.profile-image img {
+	height: 176px;
+	width: 176px;
+	border-radius: 50%;
+	border: 4px solid #FFFFFF;
+}
+
+/* Profile details heading */
+.profile-details h2 {
+	color: #080809;
+	font-weight: 900;
+	font-size: 32px;
+	font-family: sans-serif;
+	margin-top: 22px;
+}
+
+/* Profile details container */
+.profile-details {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/* Paragraph inside profile details */
+.profile-details p {
+	margin: -6px 0px 5px;
+}
+
+/* Links inside profile details paragraph */
+.profile-details p a {
+	font-size: 15px;
+	color: #65686c;
+}
+
+/* Strong text inside profile links */
+.profile-details p a strong {
+	margin-right: 4px;
+	font-weight: bold;
+}
+
+/* Span text inside profile links */
+.profile-details p a span {
+	font-size: 15px;
+	font-weight: 600;
+}
+
+/* Followers images height */
+.followers-img {
+	height: 32px;
+}
+
+.followers-images {
+	display: flex;
+	align-items: center;
+}
+
+.followers {
+	width: 38px;
+	height: 37px;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	object-fit: cover;
+	margin-left: -10px;
+	position: relative;
+}
+
+/* z-index order: first image on top */
+.followers:nth-child(1) {
+	z-index: 8;
+}
+
+.followers:nth-child(2) {
+	z-index: 7;
+}
+
+.followers:nth-child(3) {
+	z-index: 6;
+}
+
+.followers:nth-child(4) {
+	z-index: 5;
+}
+
+.followers:nth-child(5) {
+	z-index: 4;
+}
+
+.followers:nth-child(6) {
+	z-index: 3;
+}
+
+.followers:nth-child(7) {
+	z-index: 2;
+}
+
+.followers:nth-child(8) {
+	z-index: 1;
+}
+
+/* keep first image fully visible */
+.followers:first-child {
+	margin-left: 0;
+}
+
+/* Profile buttons container */
+.profile-button-all {
+	height: 33px;
+	width: 254px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 18px;
+}
+
+/* Search button styling */
+.btn-search {
+	background-color: #e2e5e7;
+	border-radius: 8px;
+	border: none;
+	height: 36px;
+	width: 98px;
+}
+
+/* Images inside search button */
+.btn-search>.search-icons {
+	width: 20px;
+	height: 20px;
+	margin-top: -1px;
+}
+
+/* Follow button styling */
+.btn-follow {
+	display: flex;
+	align-items: center;
+	font-weight: 600;
+	color: white;
+	font-size: 14px;
+	background-color: #1869F2;
+	border-radius: 8px;
+	border: none;
+	height: 36px;
+	width: 93px;
+	padding-left: 13px;
+	margin-left: 1px;
+}
+
+/* Image inside follow button */
+.btn-follow>img {
+	margin-right: 6px;
+	margin-left: -1px;
+}
+
+/* Drop button styling */
+.btn-drop {
+	background-color: #e2e5e7;
+	height: 36px;
+	width: 48px;
+	border-radius: 8px;
+	border: none;
+	padding: 0px 16px;
+}
+
+/* More button styling */
+.more-btn {
+	background: #D6D9DD;
+}
+
+/* Photos section styling */
+.photos {
+	background: #fff;
+	padding: 15px;
+	border-radius: 10px;
+	margin-top: 15px;
+	width: 102.9%;
+}
+/* Photos top section */
+.photos-top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.photos-top h4 {
+	margin: 0;
+	font-weight: 600;
+	font-size: 20px;
+}
+
+.photos-top .see-all {
+	font-size: 17px;
+	color: #1877f2;
+	text-decoration: none;
+}
+
+.photo-first{
+	border-top-left-radius: 13px;
+}
+
+.photo-third{
+	border-top-right-radius: 13px;
+}
+
+.photo-seventh{
+	border-bottom-left-radius: 13px;
+}
+
+.photo-ninth{
+	border-bottom-right-radius: 13px;
+}
+
+.photos-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 4px;
+	margin-top: 17px;
+}
+
+.photos-grid img {
+	width: 146px;
+	height: 149px;
+	object-fit: cover;
+	cursor: pointer;
+}
+
+/* reaction */
+.like-reaction {
+	position: relative;
+}
+
+.love-reaction {
+	margin-left: -8px;
+}
+
+/* Hover effect for photos */
+.photos img:hover {
+	transform: scale(1.01);
+}
+
+/* Ad list styling */
+.ad-list {
+	display: flex;
+	text-decoration: none;
+	list-style: none;
+	font-size: 13px;
+	font-weight: 600;
+	color: #65686C;
+	gap: 3px;
+	margin-left: 7px;
+	margin-top: 18px;
+}
+
+/* Privacy icon styling */
+.privacy {
+	height: 16px;
+	width: 16px;
+	margin-top: -2px;
+}
+
+/* Post full container background */
+.post-full-container {
+	background-color: #F0F2F5;
+}
+
+/* Post container styling */
+.post {
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 10px 10px 0px 10px;
+	margin-bottom: 15px;
+	background: #fff;
+}
+
+/* Post header layout */
+.post-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 8px;
+}
+
+/* User info container in post header */
+.post-user {
+	display: flex;
+	align-items: center;
+}
+
+/* User profile image in post header */
+.post-user-img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+/* User name and time info */
+.user-info strong {
+	font-weight: bold;
+	font-size: 14px;
+}
+
+/* Post time styling */
+.user-info small {
+	font-size: 12px;
+	color: #555;
+}
+
+/* More button (3 dots) in post header */
+.post-more-img {
+	width: 20px;
+	cursor: pointer;
+}
+
+/* Post content text */
+.post-content {
+	margin-top: 10px;
+	font-size: 14px;
+	margin-bottom: 8px;
+}
+
+/* Reaction bar below post content */
+.reaction-bar {
+	font-size: 14px;
+	color: #555;
+	margin-top: 8px;
+}
+
+/* Create post textarea styling */
+/* .create-post textarea.post-textarea {
+	width: 100%;
+	padding: 8px;
+	border-radius: 5px;
+	resize: vertical;
+} */
+
+/* Create post container */
+.create-post {
+	margin-bottom: 15px;
+}
+
+/* Submit button for post */
+.buttom-post {
+	padding: 7px;
+	width: -webkit-fill-available;
+	color: #fff;
+	background-color: blue;
+	border: none;
+	border-radius: 7px;
+}
+
+/* Post heading container */
+.post-heading {
+	background-color: #FFFFFF;
+	border-radius: 18px;
+	padding: 15px;
+	font-weight: 700;
+	font-size: 20.05px;
+	margin-top: 11px;
+	color: #080809;
+}
+
+/* Logout link styling */
+.logout-link {
+	margin-left: -11px;
+}
+
+/* Reaction summary below post (like/comment/share counts) */
+.reaction-summary {
+	display: flex;
+	justify-content: space-between;
+	font-size: 14px;
+	color: #65676b;
+	padding: 8px 10px;
+}
+
+/* Clickable text on the right side of reaction summary */
+.right-text {
+	cursor: pointer;
+}
+
+/* Divider line between post sections */
+.post-divider {
+	margin: 0;
+	border-top: 1px solid #ddd;
+}
+
+/* Post actions container (like, comment, share buttons) */
+.post-actions {
+	display: flex;
+	justify-content: space-around;
+	padding: 4px 0;
+	margin-top: 2px;
+}
+
+/* No posts found message styling */
+.no_found {
+	text-align: center;
+	padding: 20px;
+	font-size: 18px;
+	color: #888;
+}
+
+/* Individual action button styling */
+.action-btn {
+	background: none;
+	border: none;
+	font-size: 15px;
+	color: #65676b;
+	cursor: pointer;
+	padding: 5px 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+/* Hover effect for action buttons */
+.action-btn:hover {
+	background-color: #f0f2f5;
+	border-radius: 4px;
+}
+
+/* Icon inside action button */
+.action-btn i {
+	margin-right: 6px;
+}
+
+/* Reaction bar container for alignment */
+.reaction-div {
+	display: flex;
+	justify-content: space-between;
+}
+
+/* 3-dot more button container */
+.three-dot {
+	display: flex;
+	align-items: center;
+	margin-right: 3px;
+}
+
+/* 3-dot more button image styling */
+.three-dot img {
+	background-color: #E4E6EB;
+	padding: 10px;
+	border-radius: 7px;
+	height: 36px;
+	width: 48px;
+}
+
+/* Middle navigation container for posts */
+.middle-nav-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Post section heading */
+.post-section {
+	margin-top: 0px;
+	background-color: #FFFFFF;
+	border-radius: 15px;
+	margin-bottom: 18px;
+	font-weight: 700;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+	border-bottom-left-radius: 11px;
+	border-bottom-right-radius: 11px;
+}
+
+/* Post heading layout */
+.post-heading-div {
+	height: 53px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom-right-radius: 7px;
+}
+
+/* Left side of post heading */
+.post-left-side {
+	padding-left: -1px;
+}
+
+/* Filter button in post heading */
+.post-filter {
+	margin-right: 16px;
+	padding: 8px;
+	background-color: #E4E6EB;
+	height: 36px;
+	width: 91px;
+	border-radius: 7px;
+}
+
+/* Error message styling */
+#error_msg{
+	color:Red;
+	font-size:20px; 
+	margin-left:10px;
+}
+
+/* Filter icon inside filter button */
+.filter-icon {
+	font-size: 15px;
+}
+
+/* Filter images inside filter button */
+.filter-img {
+	margin-right: 3px;
+	margin-left: 4px;
+	margin-bottom: 2px;
+}
+
+/* Intro text section in post */
+.intro-text {
+	display: flex;
+	justify-content: center;
+	border-bottom: 1px solid #CED1D5;
+	margin-top: 12px;
+}
+
+/* Span inside intro text */
+.intro-text span {
+	margin-bottom: 8px;
+	margin-top: -2px;
+}
+
+/* Intro list images color filter */
+
+.intro-list {
+	margin-left: -2px;
+}
+
+.intro-list li img {
+	filter: invert(60%) sepia(0%) saturate(0%) hue-rotate(0deg);
+}
+
+/* Posts container scrolling */
+#posts_container {
+	height: 821px;
+	overflow: auto;
+	scrollbar-width: none;
+	margin-top: 13px;
+}
+
+#posts_container::-webkit-scrollbar {
+	display: none;
+}
+
+/* No friends message styling */
+#no_friends {
+	display: none;
+	text-align: center;
+	padding: 15px;
+	color: #888;
+}
+
+/* Friends outer section (same role as post-full-container) */
+#friends_container {
+	display: none;
+	background-color: #F0F2F5;
+	padding: 20px 0;
+}
+
+/* Inner centered container (like .container) */
+#friends_container .friends-inner {
+	max-width: 1200px;
+	/* same visual width as posts */
+	margin: 0 auto;
+	background: #ffffff;
+	border-radius: 12px;
+	padding: 16px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* Friends grid layout */
+#friends_container .friends-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 16px;
+}
+
+/* Friend card */
+#friends_container .friend-card {
+	background: #ffffff;
+	border-radius: 10px;
+	padding: 12px;
+	text-align: center;
+	transition: box-shadow 0.2s ease;
+}
+
+#friends_container .friend-card:hover {
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Friend image */
+#friends_container .friend-card img {
+	width: 100%;
+	height: 160px;
+	object-fit: cover;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+/* Friend name */
+#friends_container .friend-name {
+	margin-top: 8px;
+	font-size: 15px;
+	font-weight: 600;
+	color: #050505;
+}
+
+/* Friend mutual friends */
+.friend-row {
+	background: #fff;
+	border: 1px solid #e4e6eb;
+	border-radius: 8px;
+	padding: 12px;
+	margin-bottom: 15px;
+	display: flex;
+	align-items: center;
+}
+
+.friend-left {
+	margin-right: 12px;
+}
+
+.friend-img {
+	width: 60px;
+	height: 60px;
+	object-fit: cover;
+	border-radius: 6px;
+}
+
+.friend-middle {
+	flex: 1;
+}
+
+.friend-name {
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.friend-sub {
+	font-size: 13px;
+	color: #65676b;
+}
+
+.friend-right {
+	margin-left: 10px;
+}
+
+.friends-header {
+	margin-bottom: 10px;
+}
+
+.friend-search {
+	background-color: #E4E6EB;
+	border: none;
+	outline: none;
+	padding: 5px;
+	margin-left: 5px;
+}
+
+.friend-search-div {
+	display: flex;
+	background-color: #E4E6EB;
+	padding: 2px;
+	border-radius: 20px;
+	padding-right: 10px;
+}
+
+.friend-search-div img {
+	margin-left: 15px;
+}
+
+.friend-row {
+	background: #fff;
+	border: 1px solid #eee;
+	padding: 10px;
+	margin-bottom: 15px;
+	border-radius: 6px;
+}
+
+.friend-heading {
+	font-weight: 600;
+}
+
+/* Action icons for like, comment, share */
+.action-like {
+	background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v4/yJ/r/VnWiFrYgCpp.png&quot;); 
+	background-position: 0px -833px; 
+	background-size: auto; width: 20px; 
+	height: 20px; 
+	background-repeat: no-repeat; 
+	display: inline-block;
+}
+
+.action-comment {
+	background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v4/yJ/r/VnWiFrYgCpp.png&quot;); 
+	background-position: 0px -791px; 
+	background-size: auto; 
+	width: 20px; 
+	height: 20px; 
+	background-repeat: no-repeat; 
+	display: inline-block;
+}
+
+.action-share {
+	background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v4/yJ/r/VnWiFrYgCpp.png&quot;);
+	background-position: 0px -875px; 
+	background-size: auto; 
+	width: 20px; 
+	height: 20px; 
+	background-repeat: no-repeat; 
+	display: inline-block;
+}
+
+/* About section styling */
+#about_container {
+	display:none;
+	background-color: #F0F2F5;
+	display: block;
+	padding: 15px 0px;
+}
+
+.about-wrapper {
+	background-color: white;
+}
+
+.about-left-side {
+	border-right: 1px solid #D0D3D7;
+}
+
+.about-left {
+	padding: 10px 0;
+}
+
+.about-menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.about-menu .about-heading {
+	font-size: 20px;
+	font-weight: 600;
+	margin-left: 8px;
+}
+
+.about-menu li {
+	padding: 12px 8px;
+	cursor: pointer;
+	font-weight: 600;
+	color: #65686C;
+	font-size: 15px;
+}
+
+.about-menu li.active {
+	background: #e7f3ff;
+	color: #0064D1;
+	border-radius: 6px;
+}
+
+.about-menu li:hover {
+	background: #ddd;
+	color: #555;
+	border-radius: 6px;
+}
+
+.about-right {
+	padding: 38px 13px;
+}
+
+.about-details {
+	list-style: none;
+	padding: 0;
+}
+
+.about-details li {
+	display: flex;
+	gap: 15px;
+	margin-bottom: 20px;
+	font-size: 15px;
+}
+
+.about-details i {
+	color: #65676b;
+	font-size: 18px;
+	margin-top: 4px;
+}
+
+.about-icon {
+	height: 24px;
+	width: 24px;
+}
+
+/* Small text styling */
+.small-text-last {
+	font-size: 13px;
+	color: #65676b;
+	margin-left: -20px;
+	line-height: -70px;
+}
+
+.small-text {
+	font-size: 13px;
+	color: #65676b;
+	margin-left: -456px;
+}
+
+
+
+/* Media query for mobile devices (max-width: 767px) */
+@media (max-width: 767px) {
+
+	/* Navigation container adjustments */
+	.nav-container {
+		background-color: #FFFFFF;
+		width: 110%;
+		height: 56px;
+		position: fixed;
+		z-index: 1000;
+	}
+
+	/* Facebook menu row adjustments */
+	.fb-menu-row {
+		display: flex;
+		flex-direction: row;
+		gap: 8px;
+		height: 60px;
+	}
+
+	/* Center image adjustments */
+	.center-img>img {
+		width: 100%;
+		height: 100%;
+	}
+
+	/* Background image adjustments */
+	.bg-image {
+		width: 100%;
+		max-width: 1250px;
+		height: 270px;
+		background-image: url(./images/main.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center 13%;
+		border-bottom-left-radius: 8px;
+		border-bottom-right-radius: 8px;
+	}
+
+	/* Nav width adjustments */
+	.nav-width {
+		max-width: 100%;
+	}
+
+	/* Banner left input adjustments */
+	.banner-left-input {
+		width: 41px;
+		height: 40px;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	/* Search icon adjustments */
+	.banner-left-input>.search-icon {
+		font-size: 15px;
+		opacity: 0.6;
+	}
+
+	/* Profile layout adjustments */
+	.full-new-profile {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	/* Post container adjustments */
+	.post-full {
+		margin: 16px 0px 0px;
+		padding: 16px;
+	}
+
+	/* Profile content adjustments */
+	.pro-procontent {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	/* Profile image adjustments */
+	.profile-img {
+		margin-top: -40px;
+		margin-left: 25px;
+	}
+
+	/* Page container padding adjustments */
+	.post-midle-container {
+		background: #f0f2f5;
+		padding-top: 14px;
+		padding-right: 0px;
+		padding-left: 1px;
+		padding-bottom: 40px;
+	}
+
+	/* Profile details alignment */
+	.profile-details {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: -9px 0px 12px;
+	}
+
+	/* Profile button padding */
+	.profile-button {
+		padding: 0px 50px;
+	}
+
+	/* Middle nav adjustments */
+	.middle-nav-div {
+		margin-left: -20px;
+	}
+}
+
+/* Media query for small tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+
+	/* Banner left input adjustments */
+	.banner-left-input {
+		width: 41px;
+		height: 40px;
+	}
+
+	/* Center image adjustments */
+	.center-img>img {
+		width: 100%;
+		height: 100%;
+	}
+
+	/* Background image adjustments */
+	.bg-image {
+		width: 100%;
+		max-width: 1250px;
+		height: 519px;
+		background-image: url(./images/main.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center 21%;
+		border-bottom-left-radius: 8px;
+		border-bottom-right-radius: 8px;
+	}
+
+	/* Profile details alignment */
+	.profile-details {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: -9px 0px 12px;
+	}
+
+	/* Profile layout adjustments */
+	.full-new-profile {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	/* Profile content adjustments */
+	.pro-procontent {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+/* Media query for large tablets (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+	/* Center image adjustments */
+	.center-img>img {
+		width: 100%;
+		height: 100%;
+	}
+
+	/* Background image adjustments */
+	.bg-image {
+		width: 100%;
+		max-width: 1250px;
+		height: 519px;
+		background-image: url(./images/main.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center 21%;
+		border-bottom-left-radius: 8px;
+		border-bottom-right-radius: 8px;
+	}
+}
+
+/* Media query for desktops (min-width: 1200px) */
+@media (min-width: 1200px) {
+
+	/* Profile row layout adjustments */
+	.profile-row {
+		display: flex;
+		padding: 6px 300px;
+		margin-left: 30px;
+	}
+
+	/* Profile details margin adjustments */
+	.profile-details {
+		margin-left: 14px;
+		margin-bottom: 12px;
+	}
+
+	/* Tick image adjustments */
+	.tick-span .tick-img {
+		margin-left: 0px;
+	}
+
+	/* Profile button margin adjustments */
+	.profile-button {
+		margin-right: -22px;
+	}
+}
