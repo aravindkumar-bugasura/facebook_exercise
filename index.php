@@ -81,7 +81,7 @@
 	// Fetch posts (main user + friends)
 	// ==========================
 	if ($profile_user_id == $main_user_id) {
-		// MAIN USER FEED (Mark + friends)
+		// MAIN USER
 		$sql_post = "
 			SELECT DISTINCT w.user_id, w.post, w.posting_date
 			FROM tWall w LEFT JOIN tFriends f ON w.user_id = f.friend_id
@@ -89,7 +89,7 @@
 			ORDER BY w.posting_date DESC;
 		";
 	} else {
-		// FRIEND PROFILE (only Vikram)
+		// FRIEND PROFILE
 		$sql_post = "
 			SELECT user_id, post, posting_date
 			FROM tWall
