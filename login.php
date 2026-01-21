@@ -1,13 +1,6 @@
 <?php
 	session_start();
-	$servername = "localhost";
-	$username = "root";
-	$password = "Root@123";
-	$database = "facebook_db";
-	$con = new mysqli($servername, $username, $password, $database);
-	if ($con->connect_error) {
-		die("Connection failed: " . $con->connect_error);
-	}
+	include 'db_connection.php';
 	$msg = "";
 	if (isset($_SESSION['error_msg'])) {
 		$msg = $_SESSION['error_msg'];
