@@ -1,11 +1,8 @@
 <?php
 	session_start();
 	include 'db_connection.php';
-
 	if (isset($_GET['user_id'])) {
-
 		$user_id = intval($_GET['user_id']);
-
 		$sql = "
 			SELECT u.User_id, u.Name, u.photo_path
 			FROM tFriends f LEFT OUTER JOIN tUser u 
