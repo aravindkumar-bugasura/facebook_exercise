@@ -1,12 +1,5 @@
 <?php
-	$servername = "localhost";
-	$username = "root";
-	$password = "Root@123";
-	$database = "facebook_db";
-	$con = new mysqli($servername, $username, $password, $database);
-	if ($con->connect_error) {
-		die("Connection failed: " . $con->connect_error);
-	}
+	include 'db_connection.php';
 	$wall_user_id = isset($_GET['user_id']) ? intval($_GET['user_id']) : 1;
 
 	$sql_post = "SELECT post, posting_date FROM tWall WHERE user_id=$wall_user_id ORDER BY posting_date DESC";
