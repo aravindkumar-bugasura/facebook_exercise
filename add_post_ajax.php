@@ -1,16 +1,8 @@
 <?php
-// ==========================
-// Database Connection
-// ==========================
-	$servername = "localhost";
-	$username   = "root";
-	$password   = "Root@123";
-	$database   = "facebook_db";
-	$con = new mysqli($servername, $username, $password, $database);
-	// Check connection
-	if ($con->connect_error) {
-		die("Connection failed: " . $con->connect_error);
-	}
+	// ==========================
+	// Database Connection
+	// ==========================
+	include 'db_connection.php';
 	// ==========================
 	// Main User ID (for demo / session)
 	// ==========================
@@ -25,8 +17,8 @@
 			$post_safe = $con->real_escape_string($post);
 			// Insert post into database
 			$sql = "
-				INSERT INTO tWall (user_id, post, posting_date)
-				VALUES ($main_user_id, '$post_safe', NOW())
+			INSERT INTO tWall (user_id, post, posting_date)
+			VALUES ($main_user_id, '$post_safe', NOW())
 			";
 			if ($con->query($sql)) {
 				echo "success"; 

@@ -489,7 +489,7 @@ body {
 	width: 100%;
 	max-width: 1250px;
 	height: 519px;
-	background-image: url(./images/main.jpg);
+	background-image: url(/images/main.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center 21%;
