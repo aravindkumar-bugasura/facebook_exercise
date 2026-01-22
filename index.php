@@ -14,9 +14,7 @@
 	// ==========================
 	// Profile user (viewed profile)
 	// ==========================
-	$profile_user_id = isset($_GET['user_id'])
-		? (int) $_GET['user_id']
-		: $_SESSION['user_id'];
+	$profile_user_id = isset($_GET['user_id'])? (int) $_GET['user_id']: $_SESSION['user_id'];
 	// ==========================
 	// Function to show "time ago"
 	// ==========================
@@ -39,17 +37,21 @@
 	// Fetch main user data
 	// ==========================
 	$main_user_id = $_SESSION['user_id'];
-	$sql_main_user = "SELECT * FROM tUser WHERE user_id = $main_user_id";
+	$sql_main_user = "
+	SELECT * 
+	FROM tUser 
+	WHERE user_id = $main_user_id
+	";
 	$result_main_user = $con->query($sql_main_user);
 	$main_user = $result_main_user->fetch_assoc();
 	// ==========================
 	// Fetch friends of main user
 	// ==========================
 	$sql_friend = "
-		SELECT DISTINCT u.user_id, u.name, u.photo_path, u.cover_photo
-		FROM tFriends f
-		LEFT OUTER JOIN tUser u ON f.friend_id = u.user_id
-		WHERE f.user_id = $main_user_id;
+	SELECT DISTINCT u.user_id, u.name, u.photo_path, u.cover_photo
+	FROM tFriends f
+	LEFT OUTER JOIN tUser u ON f.friend_id = u.user_id
+	WHERE f.user_id = $main_user_id;
 	";
 	$result_friend = $con->query($sql_friend);
 	// ==========================
@@ -62,12 +64,9 @@
 		$phone   = $con->real_escape_string($_POST['phone']);
 		$address = $con->real_escape_string($_POST['address']);
 		$sql_update = "
-			UPDATE tUser 
-			SET name = '$name', 
-				email_id = '$email', 
-				phone = '$phone', 
-				address = '$address'
-			WHERE user_id = $user_id
+		UPDATE tUser 
+		SET name = '$name', email_id = '$email', phone = '$phone', address = '$address'
+		WHERE user_id = $user_id
 		";
 		if ($con->query($sql_update)) {
 			$_SESSION['update_success'] = "Profile updated successfully!";
@@ -81,20 +80,21 @@
 	// Fetch posts (main user + friends)
 	// ==========================
 	if ($profile_user_id == $main_user_id) {
-		// MAIN USER FEED (Mark + friends)
+		// MAIN USER
 		$sql_post = "
-			SELECT DISTINCT w.user_id, w.post, w.posting_date
-			FROM tWall w LEFT JOIN tFriends f ON w.user_id = f.friend_id
-			WHERE w.user_id = $main_user_id OR f.user_id = $main_user_id
-			ORDER BY w.posting_date DESC;
+		SELECT DISTINCT w.user_id, w.post, w.posting_date
+		FROM tWall w 
+		LEFT JOIN tFriends f ON w.user_id = f.friend_id
+		WHERE w.user_id = $main_user_id OR f.user_id = $main_user_id
+		ORDER BY w.posting_date DESC;
 		";
 	} else {
-		// FRIEND PROFILE (only Vikram)
+		// FRIEND PROFILE 
 		$sql_post = "
-			SELECT user_id, post, posting_date
-			FROM tWall
-			WHERE user_id = $profile_user_id
-			ORDER BY posting_date DESC
+		SELECT user_id, post, posting_date
+		FROM tWall
+		WHERE user_id = $profile_user_id
+		ORDER BY posting_date DESC
 		";
 	}
 	$result_post = $con->query($sql_post);
@@ -107,8 +107,8 @@
 		if (!empty($post)) {
 			$post_safe = $con->real_escape_string($post);
 			$sql_insert = "
-				INSERT INTO tWall (user_id, post, posting_date)
-				VALUES ($user_id, '$post_safe', NOW())
+			INSERT INTO tWall (user_id, post, posting_date)
+			VALUES ($user_id, '$post_safe', NOW())
 			";
 			if ($con->query($sql_insert)) {
 				header("Location: check.php");
@@ -119,13 +119,15 @@
 	// ==========================
 	// Fetch profile user data (for header)
 	// ==========================
-	$sql_profile_user = "SELECT name, photo_path FROM tUser WHERE user_id = $profile_user_id";
+	$sql_profile_user = "
+	SELECT name, photo_path 
+	FROM tUser 
+	WHERE user_id = $profile_user_id
+	";
 	$result_profile_user = $con->query($sql_profile_user);
 	$profile_user = $result_profile_user->fetch_assoc();
 	// Fallback image
-	$profile_photo = !empty($profile_user['photo_path'])
-		? $profile_user['photo_path']
-		: 'images/default-user.png';
+	$profile_photo = !empty($profile_user['photo_path'])? $profile_user['photo_path']: 'images/default-user.png';
 ?>
 <!DOCTYPE html>
 <html lang="en">

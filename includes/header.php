@@ -26,9 +26,15 @@
 				<div class="right-content right-find-friends hidden-xs hidden-sm">
 					<span class="find-friend">Find friends</span>
 				</div>
-				<div class="right-content top-right-icon" id="menu"><img src="./images/menu.svg" alt="menu" class="user-img"></div>
-				<div class="right-content top-right-icon" id="message"><img src="./images/mess.svg" alt="message" class="user-img"></div>
-				<div class="right-content top-right-icon" id="notifications"><img src="./images/notification.svg" class="user-img" alt="notification"></div>
+				<div class="right-content top-right-icon" id="menu">
+					<img src="./images/menu.svg" alt="menu" class="user-img">
+				</div>
+				<div class="right-content top-right-icon" id="message">
+					<img src="./images/mess.svg" alt="message" class="user-img">
+				</div>
+				<div class="right-content top-right-icon" id="notifications">
+					<img src="./images/notification.svg" class="user-img" alt="notification">
+				</div>
 				<div class="right-content user-icon dropdown">
 					<img src="./images/mark.jpg" alt="user" class="user-img" id="user_img_mark">
 					<img src="./images/dropdown_pro.svg" alt="drop_down" id="user_drop_mark">

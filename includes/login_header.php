@@ -3,8 +3,7 @@
 	<div class="left-content">
 		<img src="./images/facebook_text.svg" alt="facebook">
 		<p class="fb-text">
-			Facebook helps you connect and share<br>
-			with the people in your life.
+			Facebook helps you connect and share<br>with the people in your life.
 		</p>
 	</div>
 	<!-- Right Login Box -->

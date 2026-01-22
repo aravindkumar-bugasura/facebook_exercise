@@ -14,7 +14,11 @@
 	if (isset($_POST['login'])) {
 		$email = $con->real_escape_string($_POST['email']);
 		$password = $con->real_escape_string($_POST['password']);
-		$sql = "SELECT * FROM tUser WHERE email_id='$email' AND Password='$password'";
+		$sql = "
+		SELECT * 
+		FROM tUser 
+		WHERE email_id='$email' AND Password='$password'
+		";
 		$result = $con->query($sql);
 		if ($result->num_rows == 1) {
 			$user = $result->fetch_assoc();
