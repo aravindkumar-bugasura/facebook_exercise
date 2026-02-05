@@ -1795,7 +1795,35 @@ body {
 	margin-left: -456px;
 }
 
+#post_like_button {
+	background-image: url('https://static.xx.fbcdn.net/rsrc.php/v4/yJ/r/VnWiFrYgCpp.png');
+	background-position: 0px -833px;
+	background-size: auto;
+	width: 20px; 
+	height: 20px; 
+	background-repeat: no-repeat; 
+	display: inline-block;
+}
 
+#post_comments_button {
+	background-image: url('https://static.xx.fbcdn.net/rsrc.php/v4/yJ/r/VnWiFrYgCpp.png'); 
+	background-position: 0px -791px; 
+	background-size: auto; 
+	width: 20px; 
+	height: 20px; 
+	background-repeat: no-repeat; 
+	display: inline-block;
+}
+
+#post_share_button {
+	background-image: url('https://static.xx.fbcdn.net/rsrc.php/v4/yJ/r/VnWiFrYgCpp.png'); 
+	background-position: 0px -875px; 
+	background-size: auto; 
+	width: 20px; 
+	height: 20px; 
+	background-repeat: no-repeat; 
+	display: inline-block;
+}
 
 /* Media query for mobile devices (max-width: 767px) */
 @media (max-width: 767px) {

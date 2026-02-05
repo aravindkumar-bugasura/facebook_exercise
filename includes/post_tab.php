@@ -29,13 +29,13 @@
 	</div>
 	<div class="post-actions">
 		<button class="action-btn">
-			<i data-visualcompletion="css-img" class="x1b0d499 x1d69dk1" style="background-image: url('https://static.xx.fbcdn.net/rsrc.php/v4/yJ/r/VnWiFrYgCpp.png'); background-position: 0px -833px; background-size: auto; width: 20px; height: 20px; background-repeat: no-repeat; display: inline-block;"></i> Like
+			<i data-visualcompletion="css-img" id="post_like_button"></i> Like
 		</button>
 		<button class="action-btn">
-			<i style="background-image: url('https://static.xx.fbcdn.net/rsrc.php/v4/yJ/r/VnWiFrYgCpp.png'); background-position: 0px -791px; background-size: auto; width: 20px; height: 20px; background-repeat: no-repeat; display: inline-block;"></i> Comment
+			<i id="post_comments_button"></i> Comment
 		</button>
 		<button class="action-btn">
-			<i style="background-image: url('https://static.xx.fbcdn.net/rsrc.php/v4/yJ/r/VnWiFrYgCpp.png'); background-position: 0px -875px; background-size: auto; width: 20px; height: 20px; background-repeat: no-repeat; display: inline-block;"></i> Share
+			<i id="post_share_button"></i> Share
 		</button>
 	</div>
 </div>
